@@ -1,0 +1,185 @@
+﻿/*==================================
+  Main Color Palette
+  ==================================*/
+:root {
+    --primary-color: #007bff; /* Primary Blue */
+    --secondary-color: #6c757d; /* Secondary Grey */
+    --success-color: #28a745; /* Success Green */
+    --info-color: #17a2b8; /* Info Cyan */
+    --warning-color: #ffc107; /* Warning Yellow */
+    --danger-color: #dc3545; /* Danger Red */
+    --light-color: #f8f9fa; /* Light Grey */
+    --dark-color: #343a40; /* Dark Grey */
+    --text-color-dark: #343a40;
+    --text-color-light: #f8f9fa;
+    --bg-dark-quiz: #2c3e50; /* A darker, professional blue for quiz sections */
+    --bg-light-quiz: #ecf0f1; /* A very light grey for cards/background */
+}
+
+/*==================================
+  Body and General Styling
+  ==================================*/
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: var(--bg-light-quiz);
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* Add a smooth transition for UI elements */
+.btn, .card, .form-control, .nav-link {
+    transition: all 0.3s ease-in-out;
+}
+
+/*==================================
+  Navbar Styling
+  ==================================*/
+.navbar {
+    background-color: var(--dark-color) !important;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+.navbar-brand {
+    font-weight: bold;
+    color: var(--text-color-light);
+}
+
+.nav-link {
+    color: rgba(255, 255, 255, 0.75) !important;
+    font-weight: 500;
+}
+
+    .nav-link:hover {
+        color: var(--text-color-light) !important;
+        transform: translateY(-2px);
+    }
+
+/*==================================
+  Card and Container Styling
+  ==================================*/
+.card {
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.card-header {
+    border-radius: 10px 10px 0 0 !important;
+    font-weight: bold;
+    border-bottom: none;
+    padding: 1rem;
+}
+
+.card-footer {
+    border-radius: 0 0 10px 10px !important;
+    border-top: none;
+}
+
+/* Custom background for quiz cards */
+.card-header.bg-quiz {
+    background-color: var(--bg-dark-quiz) !important;
+    color: var(--text-color-light) !important;
+}
+
+/*==================================
+  Button Styling
+  ==================================*/
+.btn {
+    border-radius: 50px;
+    font-weight: bold;
+    padding: 10px 25px;
+}
+
+.btn-primary {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+}
+
+    .btn-primary:hover {
+        background-color: #0056b3;
+        border-color: #0056b3;
+    }
+
+.btn-info {
+    background-color: var(--info-color);
+    border-color: var(--info-color);
+}
+
+    .btn-info:hover {
+        background-color: #117a8b;
+        border-color: #117a8b;
+    }
+
+.btn-success {
+    background-color: var(--success-color);
+    border-color: var(--success-color);
+}
+
+    .btn-success:hover {
+        background-color: #218838;
+        border-color: #218838;
+    }
+
+.btn-warning {
+    background-color: var(--warning-color);
+    border-color: var(--warning-color);
+    color: var(--dark-color);
+}
+
+    .btn-warning:hover {
+        background-color: #d39e00;
+        border-color: #d39e00;
+    }
+
+/*==================================
+  Form Control Styling
+  ==================================*/
+.form-control {
+    border-radius: 50px; /* round shape */
+    /*padding: 10px 10px; /* andar ka gap */
+    border: 1px solid #ced4da; /* border color */
+    width: 100%; /* responsive: parent ke hisaab se stretch */
+    box-sizing: border-box; /* padding+border ko width ke andar count kare */
+    font-size: 16px; /* readable text */
+    line-height: 1.5; /* text cut na ho */
+    outline: none; /* default blue outline hatao */
+    transition: border-color 0.3s, box-shadow 0.3s; /* smooth effect */
+}
+
+    .form-control:focus {
+        border-color: #80bdff;
+        box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+    }
+
+/*.form-control {
+    border-radius: 50px;
+    padding: 10px 20px;
+    border: 1px solid #ced4da;
+}
+
+    .form-control:focus {
+        box-shadow: 0 0 0 0.2rem rgba(0,123,255,.25);
+    }*/
+
+/*==================================
+  Quiz Specific Styling
+  ==================================*/
+.list-group-item {
+    border-radius: 10px !important;
+    margin-bottom: 10px;
+    border: 1px solid #e0e0e0;
+}
+
+    .list-group-item:hover {
+        background-color: #f1f1f1;
+        cursor: pointer;
+    }
+
+/* Footer Styling */
+.footer {
+    background-color: var(--dark-color);
+    color: var(--text-color-light);
+    padding: 20px 0;
+    margin-top: auto; /* Push footer to the bottom */
+}

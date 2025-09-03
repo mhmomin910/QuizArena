@@ -1,0 +1,149 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="Site.master.cs" Inherits="Site" %>
+
+<!DOCTYPE html>
+<html lang="en">
+<head runat="server">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <title>QuizArena</title>
+
+    <!-- Bootstrap -->
+    <link href="Content/bootstrap-4.5.3-dist/css/bootstrap.min.css" rel="stylesheet" />
+
+    <!-- Font Awesome -->
+    <link href="Content/fontawesome-free-5.15.4-web/css/all.min.css" rel="stylesheet" />
+
+    <!-- Custom CSS -->
+    <link href="Content/site.css" rel="stylesheet" />
+
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #f4f6f9;
+        }
+
+        /* Navbar Styling */
+        .navbar {
+            background: linear-gradient(90deg, #0d6efd, #6610f2);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+        }
+
+        .navbar-brand {
+            font-weight: bold;
+            font-size: 1.5rem;
+            letter-spacing: 1px;
+        }
+
+        .navbar-nav .nav-link {
+            color: #fff !important;
+            transition: all 0.3s ease;
+        }
+
+            .navbar-nav .nav-link:hover {
+                color: #ffd700 !important;
+            }
+
+        /* Content */
+        .content-body {
+            flex: 1;
+            padding: 30px 0;
+        }
+
+        /* Footer */
+        footer {
+            background: #212529;
+            padding: 1.5rem 0;
+            text-align: center;
+            color: #ccc;
+        }
+
+            footer p {
+                margin: 0;
+            }
+
+            footer .social-icons a {
+                color: #ccc;
+                margin: 0 10px;
+                font-size: 1.3rem;
+                transition: 0.3s;
+            }
+
+                footer .social-icons a:hover {
+                    color: #ffd700;
+                }
+    </style>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <!-- Navbar -->
+        <header>
+            <nav class="navbar navbar-expand-lg navbar-dark">
+                <div class="container">
+                    <a class="navbar-brand" href="Dashboard.aspx"><i class="fas fa-graduation-cap"></i> QuizArena</a>
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+                        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarNav">
+                        <ul class="navbar-nav ml-auto">
+                            <li id="liViewQuizzes" runat="server" class="nav-item">
+                                <a class="nav-link" href="ViewAllQuizzes.aspx"><i class="fa fa-list"></i> View Quizzes</a>
+                            </li>
+                            <li id="liLeaderboard" runat="server" class="nav-item">
+                                <a class="nav-link" href="Leaderboard.aspx"><i class="fa fa-chart-bar"></i> Leaderboard</a>
+                            </li>
+                            <li id="liProfile" runat="server" class="nav-item">
+                                <a class="nav-link" href="UserProfile.aspx"><i class="fa fa-user"></i> Profile</a>
+                            </li>
+                            <li id="liAdminDashboard" runat="server" class="nav-item">
+                                <asp:HyperLink ID="lnkAdminDashboard" runat="server" NavigateUrl="~/AdminDashboard.aspx" CssClass="nav-link" Visible="false"><i class="fa fa-user-shield"></i> Admin Panel</asp:HyperLink>
+                            </li>
+                            <li id="liDashboard" runat="server" class="nav-item">
+                                <a class="nav-link" href="Dashboard.aspx"><i class="fa fa-tachometer-alt"></i> Dashboard</a>
+                            </li>
+                            <li class="nav-item" runat="server">
+                                <asp:HyperLink ID="lnkManageCategories" runat="server" NavigateUrl="~/ManageCategories.aspx" CssClass="nav-link"><i class="fa fa-cogs"></i> Manage Categories</asp:HyperLink>
+                            </li>
+                            <li id="liLogout" runat="server" class="nav-item">
+                                <asp:LinkButton ID="lnkLogout" runat="server" OnClick="lnkLogout_Click" CssClass="nav-link"><i class="fa fa-sign-out-alt"></i> Logout</asp:LinkButton>
+                            </li>
+                            <li id="liRegister" runat="server" class="nav-item">
+                                <a class="nav-link" href="Registration.aspx"><i class="fa fa-user-plus"></i> Register</a>
+                            </li>
+                            <li id="liLogin" runat="server" class="nav-item">
+                                <a class="nav-link" href="Login.aspx"><i class="fa fa-sign-in-alt"></i> Login</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </header>
+
+        <!-- Content -->
+        <div class="content-body" style="background:linear-gradient(45deg, black, transparent);">
+            <asp:ContentPlaceHolder ID="MainContent" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+
+        <!-- Footer -->
+        <footer>
+            <div class="container">
+                <p>&copy; 2025 QuizArena. All rights reserved.</p>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#"><i class="fab fa-github"></i></a>
+                </div>
+            </div>
+        </footer>
+    </form>
+
+    <!-- Scripts -->
+    <script src="Scripts/jquery-3.7.1.min.js"></script>
+    <script src="Scripts/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
